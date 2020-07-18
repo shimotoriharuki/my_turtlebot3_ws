@@ -1,0 +1,58 @@
+[0.026s] Invoking command in '/home/haruki/my_turtlebot3_ws/build/cpp_turtlebot_scan': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo:/home/haruki/install/py_srvcli:/home/haruki/install/py_pubsub:/home/haruki/install/my_python:/home/haruki/turtlebot3_ws/install/turtlebot3_teleop:/home/haruki/turtlebot3_ws/install/turtlebot3_example:/opt/ros/foxy /usr/bin/cmake /home/haruki/my_turtlebot3_ws/src/cpp_turtlebot_scan -DCMAKE_INSTALL_PREFIX=/home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan
+[0.085s] -- The C compiler identification is GNU 9.3.0
+[0.138s] -- The CXX compiler identification is GNU 9.3.0
+[0.142s] -- Check for working C compiler: /usr/bin/cc
+[0.207s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.208s] -- Detecting C compiler ABI info
+[0.279s] -- Detecting C compiler ABI info - done
+[0.290s] -- Detecting C compile features
+[0.290s] -- Detecting C compile features - done
+[0.292s] -- Check for working CXX compiler: /usr/bin/c++
+[0.365s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.367s] -- Detecting CXX compiler ABI info
+[0.440s] -- Detecting CXX compiler ABI info - done
+[0.455s] -- Detecting CXX compile features
+[0.455s] -- Detecting CXX compile features - done
+[0.458s] -- Found ament_cmake: 0.9.6 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.501s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.2", minimum required is "3") 
+[0.501s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.719s] -- Found ament_lint_auto: 0.9.5 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.796s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.797s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.797s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/haruki/my_turtlebot3_ws/src/cpp_turtlebot_scan/include>
+[0.797s] -- Configured cppcheck exclude dirs and/or files: 
+[0.798s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.798s] -- Configured cpplint exclude dirs and/or files: 
+[0.799s] -- Added test 'lint_cmake' to check CMake code style
+[0.800s] -- Added test 'uncrustify' to check C / C++ code style
+[0.800s] -- Configured uncrustify additional arguments: 
+[0.801s] -- Added test 'xmllint' to check XML markup files
+[0.803s] -- Configuring done
+[0.805s] -- Generating done
+[0.806s] -- Build files have been written to: /home/haruki/my_turtlebot3_ws/build/cpp_turtlebot_scan
+[0.810s] Invoked command in '/home/haruki/my_turtlebot3_ws/build/cpp_turtlebot_scan' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo:/home/haruki/install/py_srvcli:/home/haruki/install/py_pubsub:/home/haruki/install/my_python:/home/haruki/turtlebot3_ws/install/turtlebot3_teleop:/home/haruki/turtlebot3_ws/install/turtlebot3_example:/opt/ros/foxy /usr/bin/cmake /home/haruki/my_turtlebot3_ws/src/cpp_turtlebot_scan -DCMAKE_INSTALL_PREFIX=/home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan
+[0.811s] Invoking command in '/home/haruki/my_turtlebot3_ws/build/cpp_turtlebot_scan': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo:/home/haruki/install/py_srvcli:/home/haruki/install/py_pubsub:/home/haruki/install/my_python:/home/haruki/turtlebot3_ws/install/turtlebot3_teleop:/home/haruki/turtlebot3_ws/install/turtlebot3_example:/opt/ros/foxy /usr/bin/cmake --build /home/haruki/my_turtlebot3_ws/build/cpp_turtlebot_scan -- -j12 -l12
+[0.844s] [35m[1mScanning dependencies of target cpp_turtlebot3_gazebo[0m
+[0.854s] [ 50%] [32mBuilding CXX object CMakeFiles/cpp_turtlebot3_gazebo.dir/src/cpp_turtlebot3_gazebo.cpp.o[0m
+[0.883s] [100%] [32m[1mLinking CXX executable cpp_turtlebot3_gazebo[0m
+[0.929s] [100%] Built target cpp_turtlebot3_gazebo
+[0.939s] Invoked command in '/home/haruki/my_turtlebot3_ws/build/cpp_turtlebot_scan' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo:/home/haruki/install/py_srvcli:/home/haruki/install/py_pubsub:/home/haruki/install/my_python:/home/haruki/turtlebot3_ws/install/turtlebot3_teleop:/home/haruki/turtlebot3_ws/install/turtlebot3_example:/opt/ros/foxy /usr/bin/cmake --build /home/haruki/my_turtlebot3_ws/build/cpp_turtlebot_scan -- -j12 -l12
+[0.972s] Invoking command in '/home/haruki/my_turtlebot3_ws/build/cpp_turtlebot_scan': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo:/home/haruki/install/py_srvcli:/home/haruki/install/py_pubsub:/home/haruki/install/my_python:/home/haruki/turtlebot3_ws/install/turtlebot3_teleop:/home/haruki/turtlebot3_ws/install/turtlebot3_example:/opt/ros/foxy /usr/bin/cmake --install /home/haruki/my_turtlebot3_ws/build/cpp_turtlebot_scan
+[0.978s] -- Install configuration: ""
+[0.978s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/lib/cpp_turtlebot_scan/cpp_turtlebot3_gazebo
+[0.979s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/ament_index/resource_index/package_run_dependencies/cpp_turtlebot_scan
+[0.979s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/ament_index/resource_index/parent_prefix_path/cpp_turtlebot_scan
+[0.979s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/cpp_turtlebot_scan/environment/ament_prefix_path.sh
+[0.979s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/cpp_turtlebot_scan/environment/ament_prefix_path.dsv
+[0.979s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/cpp_turtlebot_scan/environment/path.sh
+[0.979s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/cpp_turtlebot_scan/environment/path.dsv
+[0.979s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/cpp_turtlebot_scan/local_setup.bash
+[0.980s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/cpp_turtlebot_scan/local_setup.sh
+[0.980s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/cpp_turtlebot_scan/local_setup.zsh
+[0.980s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/cpp_turtlebot_scan/local_setup.dsv
+[0.980s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/cpp_turtlebot_scan/package.dsv
+[0.980s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/ament_index/resource_index/packages/cpp_turtlebot_scan
+[0.980s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/cpp_turtlebot_scan/cmake/cpp_turtlebot_scanConfig.cmake
+[0.980s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/cpp_turtlebot_scan/cmake/cpp_turtlebot_scanConfig-version.cmake
+[0.980s] -- Installing: /home/haruki/my_turtlebot3_ws/install/cpp_turtlebot_scan/share/cpp_turtlebot_scan/package.xml
+[0.983s] Invoked command in '/home/haruki/my_turtlebot3_ws/build/cpp_turtlebot_scan' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo:/home/haruki/install/py_srvcli:/home/haruki/install/py_pubsub:/home/haruki/install/my_python:/home/haruki/turtlebot3_ws/install/turtlebot3_teleop:/home/haruki/turtlebot3_ws/install/turtlebot3_example:/opt/ros/foxy /usr/bin/cmake --install /home/haruki/my_turtlebot3_ws/build/cpp_turtlebot_scan

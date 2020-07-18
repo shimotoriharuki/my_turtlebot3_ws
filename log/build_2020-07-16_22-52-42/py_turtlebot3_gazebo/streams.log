@@ -1,0 +1,25 @@
+[0.220s] Invoking command in '/home/haruki/my_turtlebot3_ws/src/py_turtlebot3_gazebo': PYTHONPATH=/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo build --build-base /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build install --prefix /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo --record /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/install.log --single-version-externally-managed
+[0.421s] running egg_info
+[0.421s] writing /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/PKG-INFO
+[0.421s] writing dependency_links to /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/dependency_links.txt
+[0.422s] writing entry points to /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/entry_points.txt
+[0.422s] writing requirements to /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/requires.txt
+[0.422s] writing top-level names to /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/top_level.txt
+[0.448s] reading manifest file '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/SOURCES.txt'
+[0.449s] writing manifest file '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/SOURCES.txt'
+[0.449s] running build
+[0.449s] running build_py
+[0.449s] copying py_turtlebot3_gazebo/py_turtlebot3_drive.py -> /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build/lib/py_turtlebot3_gazebo
+[0.450s] running install
+[0.450s] running install_lib
+[0.451s] copying /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build/lib/py_turtlebot3_gazebo/py_turtlebot3_drive.py -> /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages/py_turtlebot3_gazebo
+[0.451s] byte-compiling /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages/py_turtlebot3_gazebo/py_turtlebot3_drive.py to py_turtlebot3_drive.cpython-38.pyc
+[0.453s] running install_data
+[0.453s] running install_egg_info
+[0.454s] removing '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages/py_turtlebot3_gazebo-0.0.0-py3.8.egg-info' (and everything under it)
+[0.454s] Copying /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info to /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages/py_turtlebot3_gazebo-0.0.0-py3.8.egg-info
+[0.455s] running install_scripts
+[0.469s] Installing py_turtlebot3_drive script to /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/py_turtlebot3_gazebo
+[0.469s] Installing py_turtlebot3_sub script to /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/py_turtlebot3_gazebo
+[0.470s] writing list of installed files to '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/install.log'
+[0.487s] Invoked command in '/home/haruki/my_turtlebot3_ws/src/py_turtlebot3_gazebo' returned '0': PYTHONPATH=/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo build --build-base /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build install --prefix /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo --record /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/install.log --single-version-externally-managed

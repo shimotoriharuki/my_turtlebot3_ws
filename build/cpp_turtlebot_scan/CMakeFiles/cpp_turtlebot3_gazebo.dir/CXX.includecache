@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/haruki/my_turtlebot3_ws/src/cpp_turtlebot_scan/src/cpp_turtlebot3_gazebo.cpp
+cstdio
+-
+
