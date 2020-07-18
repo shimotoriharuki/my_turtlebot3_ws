@@ -1,0 +1,4 @@
+# my_turtlebot3_ws
+
+Turtlebot3をgazebo上で動かすためのワークスペース。
+最終目標はROS2を使って、パーティクルフィルタで自己位置推定をしたい。
