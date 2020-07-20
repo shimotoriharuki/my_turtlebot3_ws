@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing py_turtlebot3_gazebo.egg-info/PKG-INFO
+writing dependency_links to py_turtlebot3_gazebo.egg-info/dependency_links.txt
+writing entry points to py_turtlebot3_gazebo.egg-info/entry_points.txt
+writing requirements to py_turtlebot3_gazebo.egg-info/requires.txt
+writing top-level names to py_turtlebot3_gazebo.egg-info/top_level.txt
+reading manifest file 'py_turtlebot3_gazebo.egg-info/SOURCES.txt'
+writing manifest file 'py_turtlebot3_gazebo.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages/site.py
+Creating /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages/py-turtlebot3-gazebo.egg-link (link to .)
+Installing py_turtlebot3_drive script to /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/py_turtlebot3_gazebo
+Installing py_turtlebot3_sub script to /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/py_turtlebot3_gazebo
+
+Installed /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo
+running install_data

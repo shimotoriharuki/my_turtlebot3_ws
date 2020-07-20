@@ -7,8 +7,7 @@ from nav_msgs.msg import Odometry
 from sensor_msgs.msg import LaserScan
 from rclpy.qos import qos_profile_system_default
 
-
-scan_data = 0.
+import numpy as np
 
 class Turtlebot3Drive(Node):
     # ノード名
@@ -19,10 +18,13 @@ class Turtlebot3Drive(Node):
     TOPIC_ODOM = "odom"
 
     def __init__(self):
+        # variable define
+        self.scan_data = np.zeros(3)
+
         # ノードの初期化
         super().__init__(self.TOPIC_VEL)
-        #super().__init__(self.TOPIC_SCAN)
-        #super().__init__(self.TOPIC_ODOM)
+        super().__init__(self.TOPIC_SCAN)
+        super().__init__(self.TOPIC_ODOM)
 
         # コンソールに表示
         self.get_logger().info("%s initializing..." % (self.TOPIC_VEL))
@@ -37,6 +39,7 @@ class Turtlebot3Drive(Node):
         self.scan_sub = self.create_subscription(LaserScan, self.TOPIC_SCAN, self.scan_callback, profile)
         #self.odom_sub = self.create_subscription(Odometry, self.TOPIC_ODOM, self.odom_callback, 1)
         #self.scan_sub
+
         # タイマーのインスタンスを生成（1秒ごとに発生）
         self.create_timer(1, self.callback)
 
@@ -53,7 +56,12 @@ class Turtlebot3Drive(Node):
         # コンソールに表示
         #     
     def scan_callback(self, msg):
-        self.get_logger().info("hello %s" % msg)
+
+        self.scan_data[0] = msg.ranges[0]
+        self.scan_data[1] = msg.ranges[1]
+
+        self.get_logger().info("scan0 %lf" % self.scan_data[0])
+        self.get_logger().info("scan1 %lf" % self.scan_data[1])
     
     def odom_callback(self, msg):
         pass
@@ -69,7 +77,7 @@ class Turtlebot3Drive(Node):
         # 送信するメッセージの作成
         cmd_vel = Twist()
         cmd_vel.linear.x = 0.
-        cmd_vel.angular.z = 2.
+        cmd_vel.angular.z = 0.1
         #msg.value = self.count
         
         # 送信

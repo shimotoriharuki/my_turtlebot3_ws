@@ -1,2 +1,1 @@
-source;share/my_turtlebot3_gazebo/environment/ament_prefix_path.sh
-source;share/my_turtlebot3_gazebo/environment/path.sh
+/home/haruki/my_turtlebot3_ws/build/my_turtlebot3_gazebo/ament_cmake_environment_hooks/local_setup.dsv

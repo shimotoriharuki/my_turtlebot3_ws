@@ -1,2 +1,1 @@
-#include <FreeImage.h>
-int main () { if (FREEIMAGE_MAJOR_VERSION >= 3 && FREEIMAGE_MINOR_VERSION >= 9) return 1; else return 0;} 
+/home/haruki/my_turtlebot3_ws/src/my_turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin/build/CMakeTmp/test_freeimage.c

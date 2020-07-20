@@ -1,0 +1,20 @@
+[0.018s] Invoking command in '/home/haruki/my_turtlebot3_ws/build/my_turtlebot3_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo:/home/haruki/turtlebot3_ws/install/turtlebot3_teleop:/home/haruki/turtlebot3_ws/install/turtlebot3_example:/opt/ros/foxy /usr/bin/cmake /home/haruki/my_turtlebot3_ws/src/my_turtlebot3_gazebo -DCMAKE_INSTALL_PREFIX=/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo
+[0.031s] -- Found ament_cmake: 0.9.6 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.056s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.201s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.207s] -- Found gazebo_ros_pkgs: 3.5.0 (/opt/ros/foxy/share/gazebo_ros_pkgs/cmake)
+[0.207s] -- Found geometry_msgs: 2.0.1 (/opt/ros/foxy/share/geometry_msgs/cmake)
+[0.217s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_connext_c;rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.219s] -- Found rosidl_adapter: 1.0.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.221s] -- Found RTI Connext: /opt/rti.com/rti_connext_dds-5.3.1
+[0.559s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_connext_cpp;rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.623s] -- Found nav_msgs: 2.0.1 (/opt/ros/foxy/share/nav_msgs/cmake)
+[0.680s] -- Found rclcpp: 2.0.1 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.707s] -- Found rmw_implementation_cmake: 1.0.1 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.709s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.819s] -- Found sensor_msgs: 2.0.1 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[0.877s] -- Found tf2: 0.13.4 (/opt/ros/foxy/share/tf2/cmake)
+[0.885s] -- Found turtlebot3: 2.1.0 (/home/haruki/turtlebot3_ws/install/turtlebot3/share/turtlebot3/cmake)
+[0.939s] -- Configuring done
+[0.945s] -- Generating done
+[0.946s] -- Build files have been written to: /home/haruki/my_turtlebot3_ws/build/my_turtlebot3_gazebo

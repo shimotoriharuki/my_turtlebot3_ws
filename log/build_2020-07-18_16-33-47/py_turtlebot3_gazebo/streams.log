@@ -1,0 +1,19 @@
+[0.234s] Invoking command in '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo': PYTHONPATH=/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo --editable --build-directory /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build --no-deps install_data --install-dir /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo
+[0.427s] running develop
+[0.539s] running egg_info
+[0.539s] writing py_turtlebot3_gazebo.egg-info/PKG-INFO
+[0.539s] writing dependency_links to py_turtlebot3_gazebo.egg-info/dependency_links.txt
+[0.540s] writing entry points to py_turtlebot3_gazebo.egg-info/entry_points.txt
+[0.540s] writing requirements to py_turtlebot3_gazebo.egg-info/requires.txt
+[0.540s] writing top-level names to py_turtlebot3_gazebo.egg-info/top_level.txt
+[0.563s] reading manifest file 'py_turtlebot3_gazebo.egg-info/SOURCES.txt'
+[0.564s] writing manifest file 'py_turtlebot3_gazebo.egg-info/SOURCES.txt'
+[0.598s] running build_ext
+[0.599s] Creating /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages/site.py
+[0.600s] Creating /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages/py-turtlebot3-gazebo.egg-link (link to .)
+[0.601s] Installing py_turtlebot3_drive script to /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/py_turtlebot3_gazebo
+[0.601s] Installing py_turtlebot3_sub script to /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/py_turtlebot3_gazebo
+[0.601s] 
+[0.601s] Installed /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo
+[0.601s] running install_data
+[0.618s] Invoked command in '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo' returned '0': PYTHONPATH=/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo --editable --build-directory /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build --no-deps install_data --install-dir /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo

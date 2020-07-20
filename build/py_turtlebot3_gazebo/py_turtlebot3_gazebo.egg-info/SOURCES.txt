@@ -8,6 +8,16 @@ setup.py
 /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/requires.txt
 /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/top_level.txt
 /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/zip-safe
+launch/empty_world.launch.py
+launch/robot_state_publisher.launch.py
+launch/turtlebot3_MCL_world.launch.py
+launch/turtlebot3_autorace.launch.py
+launch/turtlebot3_dqn_stage1.launch.py
+launch/turtlebot3_dqn_stage2.launch.py
+launch/turtlebot3_dqn_stage3.launch.py
+launch/turtlebot3_dqn_stage4.launch.py
+launch/turtlebot3_house.launch.py
+launch/turtlebot3_world.launch.py
 py_turtlebot3_gazebo/__init__.py
 py_turtlebot3_gazebo/py_turtlebot3_drive.py
 py_turtlebot3_gazebo/py_turtlebot3_sub.py
@@ -15,3 +25,6 @@ resource/py_turtlebot3_gazebo
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
+worlds/MCL_worlds/burger.model
+worlds/MCL_worlds/waffle.model
+worlds/MCL_worlds/waffle_pi.model

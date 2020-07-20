@@ -1,15 +1,1 @@
-set(CMAKE_HOST_SYSTEM "Linux-5.0.0-36-generic")
-set(CMAKE_HOST_SYSTEM_NAME "Linux")
-set(CMAKE_HOST_SYSTEM_VERSION "5.0.0-36-generic")
-set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
-
-
-
-set(CMAKE_SYSTEM "Linux-5.0.0-36-generic")
-set(CMAKE_SYSTEM_NAME "Linux")
-set(CMAKE_SYSTEM_VERSION "5.0.0-36-generic")
-set(CMAKE_SYSTEM_PROCESSOR "x86_64")
-
-set(CMAKE_CROSSCOMPILING "FALSE")
-
-set(CMAKE_SYSTEM_LOADED 1)
+/home/haruki/my_turtlebot3_ws/src/my_turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin/build/CMakeFiles/3.10.2/CMakeSystem.cmake

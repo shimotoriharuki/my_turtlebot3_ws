@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/haruki/my_turtlebot3_ws/build/my_turtlebot3_gazebo/my_turtlebot3_drive" "TARGETS" "my_turtlebot3_drive" "DESTINATION" "lib/my_turtlebot3_gazebo")

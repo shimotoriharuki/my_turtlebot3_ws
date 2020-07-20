@@ -1,0 +1,21 @@
+[0.203s] Invoking command in '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo': PYTHONPATH=/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo --uninstall --editable --build-directory /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build
+[0.400s] running develop
+[0.524s] Invoked command in '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo' returned '0': PYTHONPATH=/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo --uninstall --editable --build-directory /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build
+[0.524s] Invoking command in '/home/haruki/my_turtlebot3_ws/src/py_turtlebot3_gazebo': PYTHONPATH=/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo build --build-base /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build install --prefix /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo --record /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/install.log --single-version-externally-managed
+[0.694s] running egg_info
+[0.695s] writing /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/PKG-INFO
+[0.695s] writing dependency_links to /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/dependency_links.txt
+[0.695s] writing entry points to /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/entry_points.txt
+[0.695s] writing requirements to /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/requires.txt
+[0.695s] writing top-level names to /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/top_level.txt
+[0.719s] reading manifest file '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/SOURCES.txt'
+[0.719s] writing manifest file '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/SOURCES.txt'
+[0.720s] running build
+[0.720s] running build_py
+[0.720s] running install
+[0.721s] running install_lib
+[0.722s] running install_data
+[0.723s] creating /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/share/py_turtlebot3_gazeboworlds
+[0.723s] creating /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/share/py_turtlebot3_gazeboworlds/MCL_worlds
+[0.723s] error: can't copy 'burger.model': doesn't exist or not a regular file
+[0.737s] Invoked command in '/home/haruki/my_turtlebot3_ws/src/py_turtlebot3_gazebo' returned '1': PYTHONPATH=/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo build --build-base /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build install --prefix /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo --record /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/install.log --single-version-externally-managed

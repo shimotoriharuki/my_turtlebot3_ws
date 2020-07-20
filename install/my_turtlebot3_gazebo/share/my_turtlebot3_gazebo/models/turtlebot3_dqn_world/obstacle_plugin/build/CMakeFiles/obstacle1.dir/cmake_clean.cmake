@@ -1,10 +1,1 @@
-file(REMOVE_RECURSE
-  "CMakeFiles/obstacle1.dir/obstacle1.cc.o"
-  "libobstacle1.pdb"
-  "libobstacle1.so"
-)
-
-# Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/obstacle1.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+/home/haruki/my_turtlebot3_ws/src/my_turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin/build/CMakeFiles/obstacle1.dir/cmake_clean.cmake

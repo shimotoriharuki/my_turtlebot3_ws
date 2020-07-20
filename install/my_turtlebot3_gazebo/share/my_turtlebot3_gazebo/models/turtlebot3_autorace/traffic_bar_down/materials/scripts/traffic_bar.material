@@ -1,14 +1,1 @@
-material traffic_bar
-{
-  technique
-  {
-    pass
-    {
-      texture_unit
-      {
-        texture traffic_bar.png
-      }
-    }
-  }
-}
-
+/home/haruki/my_turtlebot3_ws/src/my_turtlebot3_gazebo/models/turtlebot3_autorace/traffic_bar_down/materials/scripts/traffic_bar.material
