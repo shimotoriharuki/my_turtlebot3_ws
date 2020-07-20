@@ -26,7 +26,10 @@
     <exec_depend>geometry_msgs</exec_depend>
     <exec_depend>nav_msgs</exec_depend>
     <exec_depend>sensor_msgs</exec_depend>
-
+    
+    <!--<gazebo_ros gazebo_media_path="${prefix}/worlds/MCL_worlds" />-->
+    <!--<gazebo_ros gazebo_model_path="${prefix}/models" /> -->
+    
   　　<!--<exec_depend>tutorial_interfaces</exec_depend>-->
   </export>
 </package>
