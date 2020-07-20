@@ -28,7 +28,7 @@ setup(
         'console_scripts': [
             'py_turtlebot3_drive = py_turtlebot3_gazebo.py_turtlebot3_drive:main',
             'py_turtlebot3_sub = py_turtlebot3_gazebo.py_turtlebot3_sub:main',
-            'marker = py_turtlebot3_gazebo.maker:main',
+            'marker = py_turtlebot3_gazebo.marker_pub:main',
         ],
     },
 )
