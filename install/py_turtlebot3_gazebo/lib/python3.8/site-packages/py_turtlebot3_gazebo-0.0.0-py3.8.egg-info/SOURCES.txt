@@ -19,6 +19,7 @@ launch/turtlebot3_dqn_stage4.launch.py
 launch/turtlebot3_house.launch.py
 launch/turtlebot3_world.launch.py
 py_turtlebot3_gazebo/__init__.py
+py_turtlebot3_gazebo/maker.py
 py_turtlebot3_gazebo/py_turtlebot3_drive.py
 py_turtlebot3_gazebo/py_turtlebot3_sub.py
 resource/py_turtlebot3_gazebo

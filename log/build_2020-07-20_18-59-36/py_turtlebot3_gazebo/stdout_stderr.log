@@ -1,0 +1,24 @@
+running develop
+running egg_info
+writing /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/PKG-INFO
+writing dependency_links to /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/dependency_links.txt
+writing entry points to /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/entry_points.txt
+writing requirements to /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/requires.txt
+writing top-level names to /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/top_level.txt
+reading manifest file '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/SOURCES.txt'
+writing manifest file '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info/SOURCES.txt'
+running build
+running build_py
+copying py_turtlebot3_gazebo/maker.py -> /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build/lib/py_turtlebot3_gazebo
+running install
+running install_lib
+copying /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build/lib/py_turtlebot3_gazebo/maker.py -> /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages/py_turtlebot3_gazebo
+byte-compiling /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages/py_turtlebot3_gazebo/maker.py to maker.cpython-38.pyc
+running install_data
+running install_egg_info
+removing '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages/py_turtlebot3_gazebo-0.0.0-py3.8.egg-info' (and everything under it)
+Copying /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/py_turtlebot3_gazebo.egg-info to /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages/py_turtlebot3_gazebo-0.0.0-py3.8.egg-info
+running install_scripts
+Installing py_turtlebot3_drive script to /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/py_turtlebot3_gazebo
+Installing py_turtlebot3_sub script to /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/py_turtlebot3_gazebo
+writing list of installed files to '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/install.log'
