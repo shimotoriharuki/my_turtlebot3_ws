@@ -1,0 +1,5 @@
+  File "/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages/py_turtlebot3_gazebo/py_turtlebot3_drive.py", line 70
+    odoms.pose..z = msg.pose.pose.position.z
+               ^
+SyntaxError: invalid syntax
+
