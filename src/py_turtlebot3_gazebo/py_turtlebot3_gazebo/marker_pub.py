@@ -5,6 +5,10 @@ from rclpy.node import Node
 
 from builtin_interfaces.msg import Duration
 
+from scipy.spatial.transform import Rotation
+import numpy as np
+
+
 
 class MyMarker(Node):
     
@@ -24,9 +28,11 @@ class MyMarker(Node):
     def timer_callback(self):
         marker_data = Marker()
         marker_array = MarkerArray()
+        rot = Rotation.from_rotvec(np.array([0, 0, np.pi/3]))
+        quo = rot.as_quat()
 
         for i in range(5):
-            marker_data.header.frame_id = "map"
+            marker_data.header.frame_id = "odom"
             #marker_data.header.stamp = rclpy.time
 
             marker_data.ns = "basic_shapes"
@@ -38,19 +44,19 @@ class MyMarker(Node):
             marker_data.pose.position.y = 0.0
             marker_data.pose.position.z = float(i)
 
-            marker_data.pose.orientation.x=0.0
-            marker_data.pose.orientation.y=0.0
-            marker_data.pose.orientation.z=1.0
-            marker_data.pose.orientation.w=0.0
+            marker_data.pose.orientation.x = quo[0]
+            marker_data.pose.orientation.y = quo[1]
+            marker_data.pose.orientation.z = quo[2]
+            marker_data.pose.orientation.w = quo[3]
 
             marker_data.color.r = 1.0
             marker_data.color.g = 0.0
             marker_data.color.b = 0.0
             marker_data.color.a = 1.0
 
-            marker_data.scale.x = 1.
-            marker_data.scale.y = 0.1
-            marker_data.scale.z = 0.1
+            marker_data.scale.x = 0.5
+            marker_data.scale.y = 0.05
+            marker_data.scale.z = 0.05
 
             marker_data.lifetime = Duration()
 
@@ -60,7 +66,8 @@ class MyMarker(Node):
     
             self.pub.publish(marker_array)
 
-        self.get_logger().info('Publishing: "%s"' % marker_array.markers[0].pose)
+        #self.get_logger().info('Publishing: "%s"' % marker_array.markers[0].pose)
+        self.get_logger().info('Debug: "%f"' % quo[1])
 
 
 
