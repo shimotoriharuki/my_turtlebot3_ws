@@ -63,13 +63,13 @@
       <pose>-2.0 -0.5 0.01 0.0 0.0 0.0</pose>
       <uri>model://turtlebot3_burger</uri>
     </include>
-
+<!--
     <model name="box1">
       <static>1</static>
       <include>
         <uri>model://box1</uri>
       </include>
     </model>
-    
+-->    
   </world>
 </sdf>
