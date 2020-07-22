@@ -52,13 +52,11 @@ class Turtlebot3Drive(Node):
 
         # publisherインスタンスを生成
         self.pub = self.create_publisher(Twist, self.TOPIC_VEL, 10)
-        #self.marker_publisher = self.create_publisher(MarkerArray, self.TOPIC_MARKER, 10)
 
+        # subscriberインスタンスを生成
         profile = qos_profile_system_default
-
         self.scan_sub = self.create_subscription(LaserScan, self.TOPIC_SCAN, self.scan_callback, profile)
         self.odom_sub = self.create_subscription(Odometry, self.TOPIC_ODOM, self.odom_callback, 1)
-        #self.scan_sub
 
         # タイマーのインスタンスを生成（1秒ごとに発生）
         self.create_timer(0.1, self.callback)
@@ -79,9 +77,6 @@ class Turtlebot3Drive(Node):
 
         self.scan_data[0] = msg.ranges[0]
         self.scan_data[1] = msg.ranges[1]
-
-        #self.get_logger().info("scan0 %lf" % self.scan_data[0])
-        #self.get_logger().info("scan1 %lf" % self.scan_data[1])
     
     def odom_callback(self, msg):
         #pass
@@ -97,22 +92,10 @@ class Turtlebot3Drive(Node):
         self.cova_l[1] = msg.twist.twist.linear.y
         self.cova_l[2] = msg.twist.twist.linear.z
 
-        #self.time = msg.header.stamp.sec
-
-        
-
-
-        #self.get_logger().info("odom %s" % msg)
-        #self.get_logger().info("odom %f" % self.poses[0])
-        #self.get_logger().info("x %f" % self.cova_l[0]+ "y %f" % self.cova_l[1] + "z %f" % self.cova_l[2])
-
     def callback(self):
         """
         タイマーの実行部
         """
-        #self.get_logger().info("Publish [%s]" % (self.count))
-        #self.get_logger().info("hello %f" % (scan_data))
-
         #--------------cmd_velo publish----------------#
         # 送信するメッセージの作成
         cmd_vel = Twist()
@@ -123,54 +106,8 @@ class Turtlebot3Drive(Node):
         self.pub.publish(cmd_vel)
 
         self.ptheta = self.omega * self.time
-        self.get_logger().info("theta %d" % self.ptheta)
+        self.get_logger().info("theta %f" % self.ptheta)
         self.time = self.time + 0.1
-"""
-        #---------------particle publich--------------#
-        marker_data = Marker()
-        marker_array = MarkerArray()
-        rot = Rotation.from_rotvec(np.array([0, 0, self.ptheta]))
-        quo = rot.as_quat()
-        
-        
-        #self.x = self.x + self.nu * self.time
-        
-
-        for i in range(5):
-            marker_data.header.frame_id = "odom"
-            #marker_data.header.stamp = rclpy.time
-
-            marker_data.ns = "basic_shapes"
-            marker_data.id = i
-
-            marker_data.action = Marker.ADD
-
-            marker_data.pose.position.x = 0.0
-            marker_data.pose.position.y = 0.0
-            marker_data.pose.position.z = float(i)
-
-            marker_data.pose.orientation.x = quo[0]
-            marker_data.pose.orientation.y = quo[1]
-            marker_data.pose.orientation.z = quo[2]
-            marker_data.pose.orientation.w = quo[3]
-
-            marker_data.color.r = 1.0
-            marker_data.color.g = 0.0
-            marker_data.color.b = 0.0
-            marker_data.color.a = 1.0
-
-            marker_data.scale.x = 0.5
-            marker_data.scale.y = 0.05
-            marker_data.scale.z = 0.05
-
-            marker_data.lifetime = Duration()
-
-            marker_data.type = 0
-
-            marker_array.markers.append(marker_data)
-    
-            #self.marker_publisher.publish(marker_array)
-"""
 
 def main(args=None):
     
