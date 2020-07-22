@@ -22,7 +22,7 @@ class ParticlesCtrl(Node):
 
         self.PARTICLES_NUM = 5
         self.DELAT_T = 1
-        self.V = {"nn":0.19, "no":0.001, "on":0.13, "oo":0.2}
+        self.V = {"nn":3.16e-3, "no":0.001, "on":3.16e-3, "oo":0.0316}
         self.C = np.diag([self.V["nn"] ** 2, self.V["no"] ** 2, self.V["on"] ** 2, self.V["oo"] ** 2])
 
         self.nu = 0

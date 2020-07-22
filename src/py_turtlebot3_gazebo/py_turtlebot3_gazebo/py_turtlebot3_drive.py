@@ -34,7 +34,7 @@ class Turtlebot3Drive(Node):
         self.time = 0
 
         self.nu = 0.1
-        self.omega = 0.5
+        self.omega = 0.05
 
         self.ptheta = 0
         self.px = 0
