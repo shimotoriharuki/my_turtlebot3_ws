@@ -23,8 +23,6 @@ class Turtlebot3Drive(Node):
     TOPIC_ODOM = "odom"
     TOPIC_MARKER = "marker"
 
-    flag = True
-
     def __init__(self):
         # variable define
         self.scan_data = np.zeros(3)
@@ -34,6 +32,13 @@ class Turtlebot3Drive(Node):
         self.cova_l = np.zeros(3)
         self.cova_a = np.zeros(3)
         self.time = 0
+
+        self.nu = 0.1
+        self.omega = 0.5
+
+        self.ptheta = 0
+        self.px = 0
+        self.py = 0
 
         # ノードの初期化
         super().__init__(self.TOPIC_VEL)
@@ -92,7 +97,9 @@ class Turtlebot3Drive(Node):
         self.cova_l[1] = msg.twist.twist.linear.y
         self.cova_l[2] = msg.twist.twist.linear.z
 
-        self.time = msg.header.stamp.sec
+        #self.time = msg.header.stamp.sec
+
+        
 
 
         #self.get_logger().info("odom %s" % msg)
@@ -110,9 +117,8 @@ class Turtlebot3Drive(Node):
         #--------------cmd_velo publish----------------#
         # 送信するメッセージの作成
         cmd_vel = Twist()
-        cmd_vel.linear.x = 0.1
-        cmd_vel.angular.z = 0.1
-        #msg.value = self.count
+        cmd_vel.linear.x = self.nu
+        cmd_vel.angular.z = self.omega
         
         # 送信
         self.pub.publish(cmd_vel)
@@ -123,8 +129,13 @@ class Turtlebot3Drive(Node):
         #---------------particle publich--------------#
         marker_data = Marker()
         marker_array = MarkerArray()
-        rot = Rotation.from_rotvec(np.array([0, 0, np.pi/3]))
+        rot = Rotation.from_rotvec(np.array([0, 0, self.ptheta]))
         quo = rot.as_quat()
+
+        
+        self.ptheta = self.omega * self.time
+        #self.x = self.x + self.nu * self.time
+        self.time = self.time + 1
 
         for i in range(5):
             marker_data.header.frame_id = "odom"
