@@ -1,0 +1,185 @@
+[0.113s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.113s] DEBUG:colcon:Parsed command line arguments: Namespace(ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fb5417bb730>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=12, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fb5417bb730>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fb5417bbc70>)
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.144s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/haruki/my_turtlebot3_ws'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(rosbag2_2020_07_13-23_16_06) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(rosbag2_2020_07_13-23_16_06) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(rosbag2_2020_07_13-23_16_06) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(rosbag2_2020_07_13-23_16_06) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(rosbag2_2020_07_13-23_16_06) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(rosbag2_2020_07_13-23_16_06) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(rosbag2_2020_07_13-23_16_06) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(rosbag2_2020_07_13-23_16_06) by extensions ['ros']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(rosbag2_2020_07_13-23_16_06) by extension 'ros'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(rosbag2_2020_07_13-23_16_06) by extensions ['cmake', 'python']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(rosbag2_2020_07_13-23_16_06) by extension 'cmake'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(rosbag2_2020_07_13-23_16_06) by extension 'python'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(rosbag2_2020_07_13-23_16_06) by extensions ['python_setup_py']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(rosbag2_2020_07_13-23_16_06) by extension 'python_setup_py'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_turtlebot3_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_turtlebot3_gazebo) by extension 'ignore'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_turtlebot3_gazebo) by extension 'ignore_ament_install'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_turtlebot3_gazebo) by extensions ['colcon_pkg']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_turtlebot3_gazebo) by extension 'colcon_pkg'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_turtlebot3_gazebo) by extensions ['colcon_meta']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_turtlebot3_gazebo) by extension 'colcon_meta'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_turtlebot3_gazebo) by extensions ['ros']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_turtlebot3_gazebo) by extension 'ros'
+[0.158s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_turtlebot3_gazebo' with type 'ros.ament_cmake' and name 'my_turtlebot3_gazebo'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_turtlebot3_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_turtlebot3_gazebo) by extension 'ignore'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_turtlebot3_gazebo) by extension 'ignore_ament_install'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_turtlebot3_gazebo) by extensions ['colcon_pkg']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_turtlebot3_gazebo) by extension 'colcon_pkg'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_turtlebot3_gazebo) by extensions ['colcon_meta']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_turtlebot3_gazebo) by extension 'colcon_meta'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_turtlebot3_gazebo) by extensions ['ros']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_turtlebot3_gazebo) by extension 'ros'
+[0.159s] DEBUG:colcon.colcon_core.package_identification:Package 'src/py_turtlebot3_gazebo' with type 'ros.ament_python' and name 'py_turtlebot3_gazebo'
+[0.159s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.159s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.159s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.159s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.159s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'my_turtlebot3_gazebo' build argument 'cmake_args' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'my_turtlebot3_gazebo' build argument 'cmake_target' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'my_turtlebot3_gazebo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'my_turtlebot3_gazebo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'my_turtlebot3_gazebo' build argument 'cmake_clean_first' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'my_turtlebot3_gazebo' build argument 'cmake_force_configure' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'my_turtlebot3_gazebo' build argument 'ament_cmake_args' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'my_turtlebot3_gazebo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'my_turtlebot3_gazebo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.163s] DEBUG:colcon.colcon_core.verb:Building package 'my_turtlebot3_gazebo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/haruki/my_turtlebot3_ws/build/my_turtlebot3_gazebo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo', 'merge_install': False, 'path': '/home/haruki/my_turtlebot3_ws/src/my_turtlebot3_gazebo', 'symlink_install': False, 'test_result_base': None}
+[0.165s] Level 5:colcon.colcon_core.verb:set package 'py_turtlebot3_gazebo' build argument 'cmake_args' from command line to 'None'
+[0.165s] Level 5:colcon.colcon_core.verb:set package 'py_turtlebot3_gazebo' build argument 'cmake_target' from command line to 'None'
+[0.165s] Level 5:colcon.colcon_core.verb:set package 'py_turtlebot3_gazebo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.165s] Level 5:colcon.colcon_core.verb:set package 'py_turtlebot3_gazebo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.165s] Level 5:colcon.colcon_core.verb:set package 'py_turtlebot3_gazebo' build argument 'cmake_clean_first' from command line to 'False'
+[0.165s] Level 5:colcon.colcon_core.verb:set package 'py_turtlebot3_gazebo' build argument 'cmake_force_configure' from command line to 'False'
+[0.166s] Level 5:colcon.colcon_core.verb:set package 'py_turtlebot3_gazebo' build argument 'ament_cmake_args' from command line to 'None'
+[0.166s] Level 5:colcon.colcon_core.verb:set package 'py_turtlebot3_gazebo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.166s] Level 5:colcon.colcon_core.verb:set package 'py_turtlebot3_gazebo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.166s] DEBUG:colcon.colcon_core.verb:Building package 'py_turtlebot3_gazebo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo', 'merge_install': False, 'path': '/home/haruki/my_turtlebot3_ws/src/py_turtlebot3_gazebo', 'symlink_install': False, 'test_result_base': None}
+[0.166s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.167s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.167s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/haruki/my_turtlebot3_ws/src/my_turtlebot3_gazebo' with build type 'ament_cmake'
+[0.170s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.170s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/haruki/my_turtlebot3_ws/src/my_turtlebot3_gazebo'
+[0.171s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.171s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.173s] DEBUG:colcon.colcon_core.shell:Ignoring prefix path '/opt/ros/foxy'
+[0.175s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/haruki/my_turtlebot3_ws/src/py_turtlebot3_gazebo' with build type 'ament_python'
+[0.176s] Level 1:colcon.colcon_core.shell:create_environment_hook('py_turtlebot3_gazebo', 'ament_prefix_path')
+[0.176s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/share/py_turtlebot3_gazebo/hook/ament_prefix_path.ps1'
+[0.178s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/share/py_turtlebot3_gazebo/hook/ament_prefix_path.dsv'
+[0.178s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/share/py_turtlebot3_gazebo/hook/ament_prefix_path.sh'
+[0.179s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.179s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.181s] DEBUG:colcon.colcon_core.shell:Ignoring prefix path '/opt/ros/foxy'
+[0.187s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/haruki/my_turtlebot3_ws/build/my_turtlebot3_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo:/home/haruki/turtlebot3_ws/install/turtlebot3_teleop:/home/haruki/turtlebot3_ws/install/turtlebot3_example:/opt/ros/foxy /usr/bin/cmake --build /home/haruki/my_turtlebot3_ws/build/my_turtlebot3_gazebo -- -j12 -l12
+[0.380s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/haruki/my_turtlebot3_ws/src/py_turtlebot3_gazebo'
+[0.381s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.381s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.383s] DEBUG:colcon.colcon_core.shell:Ignoring prefix path '/opt/ros/foxy'
+[0.388s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/haruki/my_turtlebot3_ws/build/my_turtlebot3_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo:/home/haruki/turtlebot3_ws/install/turtlebot3_teleop:/home/haruki/turtlebot3_ws/install/turtlebot3_example:/opt/ros/foxy /usr/bin/cmake --build /home/haruki/my_turtlebot3_ws/build/my_turtlebot3_gazebo -- -j12 -l12
+[0.392s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo': PYTHONPATH=/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo --uninstall --editable --build-directory /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build
+[0.422s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/haruki/my_turtlebot3_ws/build/my_turtlebot3_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo:/home/haruki/turtlebot3_ws/install/turtlebot3_teleop:/home/haruki/turtlebot3_ws/install/turtlebot3_example:/opt/ros/foxy /usr/bin/cmake --install /home/haruki/my_turtlebot3_ws/build/my_turtlebot3_gazebo
+[0.474s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_turtlebot3_gazebo)
+[0.475s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/haruki/my_turtlebot3_ws/build/my_turtlebot3_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo:/home/haruki/turtlebot3_ws/install/turtlebot3_teleop:/home/haruki/turtlebot3_ws/install/turtlebot3_example:/opt/ros/foxy /usr/bin/cmake --install /home/haruki/my_turtlebot3_ws/build/my_turtlebot3_gazebo
+[0.479s] Level 1:colcon.colcon_core.environment:checking '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo' for CMake module files
+[0.479s] Level 1:colcon.colcon_core.environment:checking '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo' for CMake config files
+[0.480s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_turtlebot3_gazebo', 'cmake_prefix_path')
+[0.480s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo/share/my_turtlebot3_gazebo/hook/cmake_prefix_path.ps1'
+[0.481s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo/share/my_turtlebot3_gazebo/hook/cmake_prefix_path.dsv'
+[0.481s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo/share/my_turtlebot3_gazebo/hook/cmake_prefix_path.sh'
+[0.482s] Level 1:colcon.colcon_core.environment:checking '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo/lib'
+[0.482s] Level 1:colcon.colcon_core.environment:checking '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo/bin'
+[0.482s] Level 1:colcon.colcon_core.environment:checking '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo/lib/pkgconfig/my_turtlebot3_gazebo.pc'
+[0.482s] Level 1:colcon.colcon_core.environment:checking '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo/lib/python3.8/site-packages'
+[0.484s] INFO:colcon.colcon_core.shell:Creating package script '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo/share/my_turtlebot3_gazebo/package.ps1'
+[0.485s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo/share/my_turtlebot3_gazebo/package.dsv'
+[0.486s] INFO:colcon.colcon_core.shell:Creating package script '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo/share/my_turtlebot3_gazebo/package.sh'
+[0.486s] INFO:colcon.colcon_core.shell:Creating package script '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo/share/my_turtlebot3_gazebo/package.bash'
+[0.487s] INFO:colcon.colcon_core.shell:Creating package script '/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo/share/my_turtlebot3_gazebo/package.zsh'
+[0.488s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/haruki/my_turtlebot3_ws/install/my_turtlebot3_gazebo/share/colcon-core/packages/my_turtlebot3_gazebo)
+[0.732s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo' returned '0': PYTHONPATH=/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo --uninstall --editable --build-directory /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build
+[0.733s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/haruki/my_turtlebot3_ws/src/py_turtlebot3_gazebo': PYTHONPATH=/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo build --build-base /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build install --prefix /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo --record /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/install.log --single-version-externally-managed
+[0.971s] Level 1:colcon.colcon_core.environment:checking '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo' for CMake module files
+[0.972s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/haruki/my_turtlebot3_ws/src/py_turtlebot3_gazebo' returned '0': PYTHONPATH=/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo build --build-base /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/build install --prefix /home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo --record /home/haruki/my_turtlebot3_ws/build/py_turtlebot3_gazebo/install.log --single-version-externally-managed
+[0.972s] Level 1:colcon.colcon_core.environment:checking '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo' for CMake config files
+[0.972s] Level 1:colcon.colcon_core.environment:checking '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib'
+[0.972s] Level 1:colcon.colcon_core.environment:checking '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/bin'
+[0.972s] Level 1:colcon.colcon_core.environment:checking '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/pkgconfig/py_turtlebot3_gazebo.pc'
+[0.973s] Level 1:colcon.colcon_core.environment:checking '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages'
+[0.973s] Level 1:colcon.colcon_core.shell:create_environment_hook('py_turtlebot3_gazebo', 'pythonpath')
+[0.973s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/share/py_turtlebot3_gazebo/hook/pythonpath.ps1'
+[0.973s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/share/py_turtlebot3_gazebo/hook/pythonpath.dsv'
+[0.974s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/share/py_turtlebot3_gazebo/hook/pythonpath.sh'
+[0.974s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(py_turtlebot3_gazebo)
+[0.974s] INFO:colcon.colcon_core.shell:Creating package script '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/share/py_turtlebot3_gazebo/package.ps1'
+[0.975s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/share/py_turtlebot3_gazebo/package.dsv'
+[0.975s] INFO:colcon.colcon_core.shell:Creating package script '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/share/py_turtlebot3_gazebo/package.sh'
+[0.975s] INFO:colcon.colcon_core.shell:Creating package script '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/share/py_turtlebot3_gazebo/package.bash'
+[0.976s] INFO:colcon.colcon_core.shell:Creating package script '/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/share/py_turtlebot3_gazebo/package.zsh'
+[0.976s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/share/colcon-core/packages/py_turtlebot3_gazebo)
+[0.976s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[0.976s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[0.976s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[0.976s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[0.982s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[0.982s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[0.982s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[0.986s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[0.987s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/haruki/my_turtlebot3_ws/install/local_setup.ps1'
+[0.988s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/haruki/my_turtlebot3_ws/install/_local_setup_util_ps1.py'
+[0.989s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/haruki/my_turtlebot3_ws/install/setup.ps1'
+[0.991s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/haruki/my_turtlebot3_ws/install/local_setup.sh'
+[0.992s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/haruki/my_turtlebot3_ws/install/_local_setup_util_sh.py'
+[0.992s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/haruki/my_turtlebot3_ws/install/setup.sh'
+[0.995s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/haruki/my_turtlebot3_ws/install/local_setup.bash'
+[0.995s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/haruki/my_turtlebot3_ws/install/setup.bash'
+[0.997s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/haruki/my_turtlebot3_ws/install/local_setup.zsh'
+[0.998s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/haruki/my_turtlebot3_ws/install/setup.zsh'

@@ -52,7 +52,7 @@ class Turtlebot3Drive(Node):
 
         # publisherインスタンスを生成
         self.pub = self.create_publisher(Twist, self.TOPIC_VEL, 10)
-        self.marker_publisher = self.create_publisher(MarkerArray, self.TOPIC_MARKER, 10)
+        #self.marker_publisher = self.create_publisher(MarkerArray, self.TOPIC_MARKER, 10)
 
         profile = qos_profile_system_default
 
@@ -61,7 +61,7 @@ class Turtlebot3Drive(Node):
         #self.scan_sub
 
         # タイマーのインスタンスを生成（1秒ごとに発生）
-        self.create_timer(1, self.callback)
+        self.create_timer(0.1, self.callback)
 
         # カウンタをリセット
         self.count = 0
@@ -104,8 +104,7 @@ class Turtlebot3Drive(Node):
 
         #self.get_logger().info("odom %s" % msg)
         #self.get_logger().info("odom %f" % self.poses[0])
-        self.get_logger().info("x %f" % self.cova_l[0]+ "y %f" % self.cova_l[1] + "z %f" % self.cova_l[2])
-        self.get_logger().info("time %d" % self.time)
+        #self.get_logger().info("x %f" % self.cova_l[0]+ "y %f" % self.cova_l[1] + "z %f" % self.cova_l[2])
 
     def callback(self):
         """
@@ -122,20 +121,20 @@ class Turtlebot3Drive(Node):
         
         # 送信
         self.pub.publish(cmd_vel)
-        # カウンタをインクリメント
-        #self.count += 1.
 
-
+        self.ptheta = self.omega * self.time
+        self.get_logger().info("theta %d" % self.ptheta)
+        self.time = self.time + 0.1
+"""
         #---------------particle publich--------------#
         marker_data = Marker()
         marker_array = MarkerArray()
         rot = Rotation.from_rotvec(np.array([0, 0, self.ptheta]))
         quo = rot.as_quat()
-
         
-        self.ptheta = self.omega * self.time
+        
         #self.x = self.x + self.nu * self.time
-        self.time = self.time + 1
+        
 
         for i in range(5):
             marker_data.header.frame_id = "odom"
@@ -170,15 +169,8 @@ class Turtlebot3Drive(Node):
 
             marker_array.markers.append(marker_data)
     
-            self.marker_publisher.publish(marker_array)
-
-    
-        
-
-
-
-
-
+            #self.marker_publisher.publish(marker_array)
+"""
 
 def main(args=None):
     
