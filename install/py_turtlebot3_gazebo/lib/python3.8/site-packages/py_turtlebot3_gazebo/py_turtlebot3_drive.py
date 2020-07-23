@@ -59,7 +59,7 @@ class Turtlebot3Drive(Node):
         self.odom_sub = self.create_subscription(Odometry, self.TOPIC_ODOM, self.odom_callback, 1)
 
         # タイマーのインスタンスを生成（1秒ごとに発生）
-        self.create_timer(0.1, self.callback)
+        self.create_timer(1, self.callback)
 
         # カウンタをリセット
         self.count = 0

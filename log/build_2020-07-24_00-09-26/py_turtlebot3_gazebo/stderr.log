@@ -1,0 +1,5 @@
+  File "/home/haruki/my_turtlebot3_ws/install/py_turtlebot3_gazebo/lib/python3.8/site-packages/py_turtlebot3_gazebo/particles_ctrl.py", line 79
+    p.z = .
+          ^
+SyntaxError: invalid syntax
+
