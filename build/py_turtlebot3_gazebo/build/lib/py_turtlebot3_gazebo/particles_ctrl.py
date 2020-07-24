@@ -22,6 +22,7 @@ class ParticlesCtrl(Node):
         # variable define
         self.TOPIC_VEL = "cmd_vel"
         self.TOPIC_PARTICLES = "particles_pose"
+        self.TOPIC_SCAN = "scan"
 
         self.PARTICLES_NUM = 50
         self.DELAT_T = 1
@@ -49,10 +50,13 @@ class ParticlesCtrl(Node):
 
         super().__init__(self.TOPIC_VEL)
         super().__init__(self.TOPIC_PARTICLES)
+        super().__init__(self.TOPIC_SCAN)
         
         # sub initiarize
-        self.get_logger().info("%s initializing..." % (self.TOPIC_VEL))
+        self.get_logger().info("initializing...")
         self.vel_sub = self.create_subscription(Twist, self.TOPIC_VEL, self.vel_callback, 10)
+        profile = qos_profile_system_default
+        self.scan_sub = self.create_subscription(LaserScan, self.TOPIC_SCAN, self.scan_callback, profile)
 
         # pub initiarize
         self.particles_pub = self.create_publisher(MarkerArray, self.TOPIC_PARTICLES, 10)
@@ -60,16 +64,31 @@ class ParticlesCtrl(Node):
         # タイマーのインスタンスを生成
         self.create_timer(self.DELAT_T, self.timer_callback)
 
-        self.get_logger().info("%s waiting /cmd_vel topic...")
+        self.get_logger().info("waiting /cmd_vel topic...")
 
     def vel_callback(self, msg):
         # get nu and omega from msg
         self.nu = msg.linear.x
         self.omega = msg.angular.z
 
-        self.get_logger().info("theta: %f" % self.ideal_theta)
+        self.get_logger().info("Subscribed cmd_vel")
+
+    def scan_callback(self, msg):
+        self.scan_data = msg.ranges
+        self.angle_increment = msg.angle_increment
+        #self.get_logger().info("scan: %f" % self.scan_data[0])
+
+    def randmark_position(self, ranges, angle_increment):
+        l = min(ranges)
+        index = ranges.index(l)
+        phi = index * angle_increment
+        
+        return [l, phi]
 
     def timer_callback(self):
+        # ---------- particles publish------------- #
+        randmark_pos = self.randmark_position(self.scan_data, self.angle_increment)
+        self.get_logger().info("l: %f" % randmark_pos[0] + ", phi: %f" % randmark_pos[1])
         # ---------- particles publish------------- #
 
         # calc ideal pose with Dead Reckoning
@@ -119,61 +138,6 @@ class ParticlesCtrl(Node):
             markerArray.markers.append(marker)
 
         self.particles_pub.publish(markerArray)
-"""
-        marker_array = MarkerArray()
-        triplePoints = []
-        
-        for i in range(self.PARTICLES_NUM):
-            # add noise
-            noise_rate_pdf = multivariate_normal(cov = self.C)
-            ns = noise_rate_pdf.rvs()
-            noised_nu = self.nu + ns[0] * math.sqrt(abs(self.nu) / self.DELAT_T) + ns[1] * math.sqrt(abs(self.omega) / self.DELAT_T)
-            noised_omega = self.omega + ns[2] * math.sqrt(abs(self.nu) / self.DELAT_T) + ns[3] * math.sqrt(abs(self.omega) / self.DELAT_T)
-
-            # calc particles pose with Dead Reckoning
-            self.particles_theta[i] += noised_omega * self.DELAT_T
-            self.particles_x[i] += noised_nu * self.DELAT_T * math.cos(self.particles_theta[i])
-            self.particles_y[i] += noised_nu * self.DELAT_T * math.sin(self.particles_theta[i])
-
-            p = Point()
-            p.x = self.particles_x[i]
-            p.y = self.particles_y[i]
-            p.z = 0.
-
-            # set markers parameters
-            rot = Rotation.from_rotvec(np.array([0, 0, self.particles_theta[i]]))
-            quo = rot.as_quat()
-
-            marker_data = Marker()
-            marker_data.header.frame_id = "odom"
-            #marker_data.header.stamp = rclpy.time
-            marker_data.ns = "basic_shapes"
-            marker_data.id = i
-            marker_data.action = Marker.ADD
-            #marker_data.pose.position.x = self.particles_x[i]
-            #marker_data.pose.position.y = self.particles_y[i]
-            #marker_data.pose.position.z = 0.
-            marker_data.pose.orientation.x = quo[0]
-            marker_data.pose.orientation.y = quo[1]
-            marker_data.pose.orientation.z = quo[2]
-            marker_data.pose.orientation.w = quo[3]
-            marker_data.color.r = 0.0
-            marker_data.color.g = 0.0
-            marker_data.color.b = 1.0
-            marker_data.color.a = 1.0
-            marker_data.scale.x = 0.5
-            marker_data.scale.y = 0.05
-            marker_data.scale.z = 0.05
-            marker_data.lifetime = Duration()
-            marker_data.type = 0
-
-            triplePoints.append(p)
-        
-        marker_data.points = triplePoints
-
-        marker_array.markers.append(marker_data)
-        self.particles_pub.publish(marker_array)
-"""
 
 
 def main(args=None):
