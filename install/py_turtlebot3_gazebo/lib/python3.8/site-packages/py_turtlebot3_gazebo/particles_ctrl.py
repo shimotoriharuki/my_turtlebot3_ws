@@ -3,6 +3,7 @@ from rclpy.node import Node
 from std_msgs.msg import String
 from std_msgs.msg import ColorRGBA
 from geometry_msgs.msg import Point
+from geometry_msgs.msg import Pose
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import LaserScan
 from rclpy.qos import qos_profile_system_default
@@ -22,7 +23,7 @@ class ParticlesCtrl(Node):
         self.TOPIC_VEL = "cmd_vel"
         self.TOPIC_PARTICLES = "particles_pose"
 
-        self.PARTICLES_NUM = 5
+        self.PARTICLES_NUM = 50
         self.DELAT_T = 1
         self.V = {"nn":3.16e-3, "no":0.001, "on":3.16e-3, "oo":0.0316}
         self.C = np.diag([self.V["nn"] ** 2, self.V["no"] ** 2, self.V["on"] ** 2, self.V["oo"] ** 2])
@@ -31,19 +32,20 @@ class ParticlesCtrl(Node):
         self.omega = 0
 
         self.ideal_theta = 0
-        self.ideal_x = -2.0
-        self.ideal_y = -0.5
+        self.ideal_x = 0.
+        self.ideal_y = 0.
 
         self.particles_theta = np.zeros(self.PARTICLES_NUM)
-        self.particles_x = np.full(self.PARTICLES_NUM, -2.0)
-        self.particles_y = np.full(self.PARTICLES_NUM, -0.5)
-        #self.particles_theta = 0.
-        #self.particles_x = 0.
-        #self.particles_y = 0.
+        self.particles_x = np.full(self.PARTICLES_NUM, 0.)
+        self.particles_y = np.full(self.PARTICLES_NUM, 0.)
 
         self.pre_partcles_theta = np.zeros(self.PARTICLES_NUM)
         self.pre_partcles_x = np.zeros(self.PARTICLES_NUM)
         self.pre_partcles_y = np.zeros(self.PARTICLES_NUM)
+
+        self.test_x = 0.
+        self.test_y = 0.
+        self.test_z = 0.
 
         super().__init__(self.TOPIC_VEL)
         super().__init__(self.TOPIC_PARTICLES)
@@ -58,20 +60,23 @@ class ParticlesCtrl(Node):
         # タイマーのインスタンスを生成
         self.create_timer(self.DELAT_T, self.timer_callback)
 
+        self.get_logger().info("%s waiting /cmd_vel topic...")
+
     def vel_callback(self, msg):
         # get nu and omega from msg
         self.nu = msg.linear.x
         self.omega = msg.angular.z
 
-        # calc ideal pose with Dead Reckoning
-        #self.ideal_theta += self.omega * self.DELAT_T
-        #self.ideal_x += self.nu * self.DELAT_T * math.cos(self.ideal_theta)
-        #self.ideal_x += self.nu * self.DELAT_T * math.sin(self.ideal_theta)
         self.get_logger().info("theta: %f" % self.ideal_theta)
 
     def timer_callback(self):
-        # particles publish
-        triplePoints = []
+        # ---------- particles publish------------- #
+
+        # calc ideal pose with Dead Reckoning
+        self.ideal_theta += self.omega * self.DELAT_T
+        self.ideal_x += self.nu * self.DELAT_T * math.cos(self.ideal_theta)
+        self.ideal_y += self.nu * self.DELAT_T * math.sin(self.ideal_theta)
+
         markerArray = MarkerArray()
         for i in range(self.PARTICLES_NUM):
             # add noise
@@ -85,37 +90,34 @@ class ParticlesCtrl(Node):
             self.particles_x[i] += noised_nu * self.DELAT_T * math.cos(self.particles_theta[i])
             self.particles_y[i] += noised_nu * self.DELAT_T * math.sin(self.particles_theta[i])
 
-            p = Point()
-            p.x = self.particles_x[i]
-            p.y = self.particles_y[i]
-            p.z = 0.
+            # convert oira to quo
             rot = Rotation.from_rotvec(np.array([0, 0, self.particles_theta[i]]))
             quo = rot.as_quat()
-
+            
             marker = Marker()
-            marker.header.frame_id = "/map"
+            marker.id = i
+            marker.header.frame_id = "/odom"
             marker.type = Marker.ARROW
             marker.action = Marker.ADD
             marker.scale.x = 0.5
             marker.scale.y = 0.05
             marker.scale.z = 0.05
-            #marker.pose.position.x = self.particles_x
-            #marker.pose.position.y = self.particles_y
-            #marker.pose.position.z = 0.
+            marker.pose.position.x = self.particles_x[i]
+            marker.pose.position.y = self.particles_y[i]
+            marker.pose.position.z = 0.
             marker.pose.orientation.x = quo[0]
             marker.pose.orientation.y = quo[1]
             marker.pose.orientation.z = quo[2]
             marker.pose.orientation.w = quo[3]
             t = Duration()
-            marker.lifetime = t
-            triplePoints.append(p)
+            marker.lifetime = t            
+            marker.color.r = 0.0
+            marker.color.g = 0.0
+            marker.color.b = 1.0
+            marker.color.a = 1.0
+        
+            markerArray.markers.append(marker)
 
-        marker.points = triplePoints
-        marker.color.r = 0.0
-        marker.color.g = 0.0
-        marker.color.b = 1.0
-        marker.color.a = 1.0
-        markerArray.markers.append(marker)
         self.particles_pub.publish(markerArray)
 """
         marker_array = MarkerArray()
