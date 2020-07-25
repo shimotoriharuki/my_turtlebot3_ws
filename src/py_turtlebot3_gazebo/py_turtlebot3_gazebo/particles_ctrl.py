@@ -16,10 +16,36 @@ import numpy as np
 import math
 from scipy.stats import multivariate_normal
 import pandas as pd
+import random
+import copy     
+
+class Particle:
+    def __init__(self, init_pose, weight):
+        self.pose = init_pose
+        self.weight = weight
+
+    def motion_update(self, nu, omega, time, noise_rate_pdf): 
+        ns = noise_rate_pdf.rvs()
+        pnu = nu + ns[0]*math.sqrt(nu/time) + ns[1]*math.sqrt(omega/time)
+        pomega = omega + ns[2]*math.sqrt(nu/time) + ns[3]*math.sqrt(omega/time)
+        #self.pose = IdealRobot.state_transition(pnu, pomega, time, self.pose)
+
+    def observation_update(self, observation, envmap, distance_dev_rate, direction_dev):
+        for d in observation:
+            obs_pos = d[0]
+            obs_id = d[1]
+            
+            ###パーティクルの位置と地図からランドマークの距離と方角を算出###
+            #pos_on_map = envmap.landmarks[obs_id].pos
+            #particle_suggest_pos = IdealCamera.observation_function(self.pose, pos_on_map)
+            
+            ###尤度の計算###
+            #distance_dev = distance_dev_rate*particle_suggest_pos[0]
+            #cov = np.diag(np.array([distance_dev**2, direction_dev**2]))
+            #self.weight *= multivariate_normal(mean=particle_suggest_pos, cov=cov).pdf(obs_pos)
 
 
 class ParticlesCtrl(Node): 
-
     def __init__(self):
         # variable define
         self.TOPIC_VEL = "cmd_vel"
@@ -27,7 +53,7 @@ class ParticlesCtrl(Node):
         self.TOPIC_SCAN = "scan"
 
         self.PARTICLES_NUM = 50
-        self.DELAT_T = 0.1
+        self.DELAT_T = 1
         self.V = {"nn":3.16e-3, "no":0.001, "on":3.16e-3, "oo":0.0316}
         self.C = np.diag([self.V["nn"] ** 2, self.V["no"] ** 2, self.V["on"] ** 2, self.V["oo"] ** 2])
 
@@ -41,10 +67,14 @@ class ParticlesCtrl(Node):
         self.particles_theta = np.zeros(self.PARTICLES_NUM)
         self.particles_x = np.full(self.PARTICLES_NUM, 0.)
         self.particles_y = np.full(self.PARTICLES_NUM, 0.)
+        self.weights = np.full(self.PARTICLES_NUM, 1.0 / self.PARTICLES_NUM)
 
-        self.pre_partcles_theta = np.zeros(self.PARTICLES_NUM)
-        self.pre_partcles_x = np.zeros(self.PARTICLES_NUM)
-        self.pre_partcles_y = np.zeros(self.PARTICLES_NUM)
+        #init_pose = [-2.0, 0, 0]
+        #self.particles = [Particle(init_pose, 1.0 / self.PARTICLES_NUM) for i in range(self.PARTICLES_NUM)]
+
+        #self.pre_partcles_theta = np.zeros(self.PARTICLES_NUM)
+        #self.pre_partcles_x = np.zeros(self.PARTICLES_NUM)
+        #self.pre_partcles_y = np.zeros(self.PARTICLES_NUM)
 
         self.test_x = 0.
         self.test_y = 0.
@@ -116,8 +146,33 @@ class ParticlesCtrl(Node):
         
         self.STORE_NUM += 1
         """       
-        # ---------- particles publish------------- #
 
+        # ---------- calculate pose for particle and randmark ---------------#
+        for i in range(self.PARTICLES_NUM):
+            true_randmark_pos = [0.0, 2.0, 0.0]
+            dx = true_randmark_pos[0] - self.particles_x[i]
+            dy = true_randmark_pos[1] - self.particles_y[i]
+            d = math.sqrt(dx ** 2 + dy ** 2)
+            phi = math.atan2(dy, dx) - self.particles_theta[i]
+            while phi >= np.pi:
+                phi -= 2 * np.pi
+            while phi < -np.pi:
+                phi += 2 * np.pi
+
+            particle_suggest_pos = [d, phi]
+            self.get_logger().info("l: %f" % particle_suggest_pos[0] + ", phi: %f" % particle_suggest_pos[1])
+
+            ###尤度の計算###
+            distance_dev_rate = 1000
+            direction_dev = 1000
+            obs_pos = randmark_pos
+            distance_dev = distance_dev_rate * particle_suggest_pos[0]
+            cov = np.diag(np.array([distance_dev ** 2, direction_dev ** 2]))
+            self.weights[i] *= multivariate_normal(mean = particle_suggest_pos, cov = cov).pdf(obs_pos)
+            print(self.weights[i])
+
+
+        # ---------- particles publish------------- #
         # calc ideal pose with Dead Reckoning
         self.ideal_theta += self.omega * self.DELAT_T
         self.ideal_x += self.nu * self.DELAT_T * math.cos(self.ideal_theta)
@@ -145,7 +200,7 @@ class ParticlesCtrl(Node):
             marker.header.frame_id = "/odom"
             marker.type = Marker.ARROW
             marker.action = Marker.ADD
-            marker.scale.x = 0.5
+            marker.scale.x = 0.5 * self.weights[i] * self.PARTICLES_NUM + 0.001
             marker.scale.y = 0.05
             marker.scale.z = 0.05
             marker.pose.position.x = self.particles_x[i]
