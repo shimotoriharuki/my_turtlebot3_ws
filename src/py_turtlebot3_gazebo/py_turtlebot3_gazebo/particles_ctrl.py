@@ -15,6 +15,8 @@ from scipy.spatial.transform import Rotation
 import numpy as np
 import math
 from scipy.stats import multivariate_normal
+import pandas as pd
+
 
 class ParticlesCtrl(Node): 
 
@@ -25,7 +27,7 @@ class ParticlesCtrl(Node):
         self.TOPIC_SCAN = "scan"
 
         self.PARTICLES_NUM = 50
-        self.DELAT_T = 1
+        self.DELAT_T = 0.1
         self.V = {"nn":3.16e-3, "no":0.001, "on":3.16e-3, "oo":0.0316}
         self.C = np.diag([self.V["nn"] ** 2, self.V["no"] ** 2, self.V["on"] ** 2, self.V["oo"] ** 2])
 
@@ -47,6 +49,11 @@ class ParticlesCtrl(Node):
         self.test_x = 0.
         self.test_y = 0.
         self.test_z = 0.
+
+        self.scan_data = [0]
+        self.angle_increment = 0.
+        self.store_randmark_pos = []
+        self.STORE_NUM = 0
 
         super().__init__(self.TOPIC_VEL)
         super().__init__(self.TOPIC_PARTICLES)
@@ -71,7 +78,7 @@ class ParticlesCtrl(Node):
         self.nu = msg.linear.x
         self.omega = msg.angular.z
 
-        self.get_logger().info("Subscribed cmd_vel")
+        #self.get_logger().info("Subscribed cmd_vel")
 
     def scan_callback(self, msg):
         self.scan_data = msg.ranges
@@ -83,12 +90,31 @@ class ParticlesCtrl(Node):
         index = ranges.index(l)
         phi = index * angle_increment
         
+        # Normalize to range that -pi ~ pi
+        while phi >= np.pi:
+            phi -= 2 * np.pi
+        while phi < -np.pi:
+            phi += 2 * np.pi        
+        
         return [l, phi]
 
     def timer_callback(self):
-        # ---------- particles publish------------- #
+        # ---------- randmark------------- #
         randmark_pos = self.randmark_position(self.scan_data, self.angle_increment)
-        self.get_logger().info("l: %f" % randmark_pos[0] + ", phi: %f" % randmark_pos[1])
+        self.get_logger().info("l: %f" % randmark_pos[0] + ", phi: %f" % np.rad2deg(randmark_pos[1]))
+""" for calculate sigmas
+        if self.STORE_NUM < 100:
+            self.store_randmark_pos.append(randmark_pos)
+
+        elif self.STORE_NUM == 100:            
+            for i in range(100):
+                print(self.store_randmark_pos[i][0], ", ")
+            for i in range(100):
+                print(self.store_randmark_pos[i][1], ", ")
+"""            
+        
+        self.STORE_NUM += 1
+        
         # ---------- particles publish------------- #
 
         # calc ideal pose with Dead Reckoning
