@@ -102,7 +102,8 @@ class ParticlesCtrl(Node):
         # ---------- randmark------------- #
         randmark_pos = self.randmark_position(self.scan_data, self.angle_increment)
         self.get_logger().info("l: %f" % randmark_pos[0] + ", phi: %f" % np.rad2deg(randmark_pos[1]))
-""" for calculate sigmas
+        """ 
+        #for calculate sigmas
         if self.STORE_NUM < 100:
             self.store_randmark_pos.append(randmark_pos)
 
@@ -111,10 +112,10 @@ class ParticlesCtrl(Node):
                 print(self.store_randmark_pos[i][0], ", ")
             for i in range(100):
                 print(self.store_randmark_pos[i][1], ", ")
-"""            
+           
         
         self.STORE_NUM += 1
-        
+        """       
         # ---------- particles publish------------- #
 
         # calc ideal pose with Dead Reckoning
