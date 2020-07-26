@@ -52,8 +52,8 @@ class ParticlesCtrl(Node):
         self.TOPIC_PARTICLES = "particles_pose"
         self.TOPIC_SCAN = "scan"
 
-        self.PARTICLES_NUM = 50
-        self.DELAT_T = 1
+        self.PARTICLES_NUM = 100
+        self.DELAT_T = 0.1
         self.V = {"nn":3.16e-3, "no":0.001, "on":3.16e-3, "oo":0.0316}
         self.C = np.diag([self.V["nn"] ** 2, self.V["no"] ** 2, self.V["on"] ** 2, self.V["oo"] ** 2])
 
@@ -130,8 +130,10 @@ class ParticlesCtrl(Node):
 
     def timer_callback(self):
         # ---------- randmark------------- #
-        randmark_pos = self.randmark_position(self.scan_data, self.angle_increment)
-        self.get_logger().info("l: %f" % randmark_pos[0] + ", phi: %f" % np.rad2deg(randmark_pos[1]))
+
+        randmark_pos = [1.91, 1.57]
+        #randmark_pos = self.randmark_position(self.scan_data, self.angle_increment)
+        self.get_logger().info("true     l: %f" % randmark_pos[0] + ", phi: %f" % np.rad2deg(randmark_pos[1]))
         """ 
         #for calculate sigmas
         if self.STORE_NUM < 100:
@@ -146,10 +148,10 @@ class ParticlesCtrl(Node):
         
         self.STORE_NUM += 1
         """       
-
+        """
         # ---------- calculate pose for particle and randmark ---------------#
         for i in range(self.PARTICLES_NUM):
-            true_randmark_pos = [0.0, 2.0, 0.0]
+            true_randmark_pos = [0.0, 1.9, 0.0]
             dx = true_randmark_pos[0] - self.particles_x[i]
             dy = true_randmark_pos[1] - self.particles_y[i]
             d = math.sqrt(dx ** 2 + dy ** 2)
@@ -160,17 +162,21 @@ class ParticlesCtrl(Node):
                 phi += 2 * np.pi
 
             particle_suggest_pos = [d, phi]
-            self.get_logger().info("l: %f" % particle_suggest_pos[0] + ", phi: %f" % particle_suggest_pos[1])
+            self.get_logger().info("particle l: %f" % particle_suggest_pos[0] + ", phi: %f" % np.rad2deg(particle_suggest_pos[1]))
 
             ###尤度の計算###
-            distance_dev_rate = 1000
-            direction_dev = 1000
-            obs_pos = randmark_pos
+            distance_dev_rate = 0.001
+            direction_dev = 0.001
             distance_dev = distance_dev_rate * particle_suggest_pos[0]
             cov = np.diag(np.array([distance_dev ** 2, direction_dev ** 2]))
-            self.weights[i] *= multivariate_normal(mean = particle_suggest_pos, cov = cov).pdf(obs_pos)
+            self.weights[i] *= multivariate_normal(mean = particle_suggest_pos, cov = cov).pdf(randmark_pos)
             print(self.weights[i])
-
+        
+        ps = random.choices(self.weights, weights=self.weights, k=self.PARTICLES_NUM  ) #wsの要素に比例した確率で、パーティクルをnum個選ぶ
+        self.weights = [copy.deepcopy(e) for e in ps]                                # 選んだリストからパーティクルを取り出し、重みを均一に
+        for p in range(self.PARTICLES_NUM): 
+            self.weights[i] = 1.0/self.PARTICLES_NUM                           #重みの正規化
+        """
 
         # ---------- particles publish------------- #
         # calc ideal pose with Dead Reckoning
@@ -205,7 +211,7 @@ class ParticlesCtrl(Node):
             marker.scale.z = 0.05
             marker.pose.position.x = self.particles_x[i]
             marker.pose.position.y = self.particles_y[i]
-            marker.pose.position.z = 0.
+            marker.pose.position.z = 0.1
             marker.pose.orientation.x = quo[0]
             marker.pose.orientation.y = quo[1]
             marker.pose.orientation.z = quo[2]
